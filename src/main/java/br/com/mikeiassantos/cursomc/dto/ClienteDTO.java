@@ -8,7 +8,9 @@ import javax.validation.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Length;
 
 import br.com.mikeiassantos.cursomc.domain.Cliente;
+import br.com.mikeiassantos.cursomc.services.validation.ClienteUpdate;
 
+@ClienteUpdate
 public class ClienteDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
@@ -16,6 +18,7 @@ public class ClienteDTO implements Serializable{
 	@NotEmpty(message = "Peenchimento obridatório")
 	@Length(min = 5, max = 120, message = "O tamanho de ser entre 5 e 120 caracteres")
 	private String nome;
+	
 	
 	@NotEmpty(message = "Peenchimento obridatório")
 	@Email(message = "Email inválido")
